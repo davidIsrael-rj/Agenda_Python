@@ -26,3 +26,9 @@ class Evento(models.Model):
             return True
         else:
             return False
+    def get_evento_adiantado(self):
+        data_atual = datetime.now() + timedelta(hours=1)
+        if self.data_evento > datetime.now()  and self.data_evento < data_atual :
+            return True
+        else:
+            return  False
